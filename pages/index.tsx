@@ -1,61 +1,137 @@
 import * as React from "react";
-import Head from "next/head";
 import { NextPage } from "next";
+import Engine, { formatValue } from "publicodes";
 
 import { Alert } from "@codegouvfr/react-dsfr/Alert";
 import { Button } from "@codegouvfr/react-dsfr/Button";
-import Stack from "@mui/material/Stack";
+
+type InputProps = {
+  name: string;
+  label: string;
+  hint?: string;
+  messages?: React.ReactNode;
+} & Partial<React.InputHTMLAttributes<HTMLInputElement>>;
+
+const Input = ({ name, label, hint, messages, ...rest }: InputProps) => {
+  const inputId = React.useId();
+  return (
+    <div className="fr-input-group">
+      <label className="fr-label" htmlFor={inputId}>
+        {label}
+        {hint && <span className="fr-hint-text">{hint}</span>}
+      </label>
+      <div className="fr-input-wrap">
+        {" "}
+        <input
+          className="fr-input"
+          type="text"
+          id={inputId}
+          name={name}
+          {...rest}
+        />
+      </div>
+      {messages}
+    </div>
+  );
+};
+
+//@ts-ignore
+import rules from "../src/publicodes.yaml";
 
 const Home: NextPage = () => {
-  const onClick1 = () => {
-    throw new Error("Hello, sentry");
-  };
+  const engine = new Engine(rules);
+  const [situation, setSituation] = React.useState({});
 
+  const montant = engine.setSituation(situation).evaluate("montant");
+
+  const setValue =
+    (key: string): React.ChangeEventHandler<HTMLInputElement> =>
+    (e) => {
+      const value = parseInt(e.currentTarget.value);
+      if (value) {
+        setSituation({
+          ...situation,
+          [key]: value,
+        });
+      } else {
+        setSituation({ ...situation, [key]: 0 });
+      }
+    };
+  const formattedMontant = formatValue(montant);
   return (
     <>
-      <Head>
-        <title>Template | Fabrique numérique des ministères sociaux</title>
-      </Head>
       <Alert
-        closable
-        description="Everything went well"
-        severity="success"
-        title="Message successfully sent"
+        title="Simulation d'indemnité de rupture conventionnelle"
+        description="Ce simulateur s'adresse exclusivement aux destinataires du courrier d'information sur la rupture conventionnelle"
+        severity="warning"
       />
-      <div className="fr-grid-row fr-grid-row--center fr-grid-row--middle fr-mb-8w fr-mt-8w">
-        <div className="fr-col-12 fr-col-md-6">
-          <h1>
-            Template
-            <span className="fr-text--lead d-block fr-mt-3w">
-              <p>Template de la fabrique des ministères sociaux.</p>
-            </span>
-          </h1>
-          <p className="fr-mt-10w">
-            Pariatur veniam ipsum pariatur elit ullamco sit quis ipsum ad veniam
-            proident sunt. Qui ut irure in quis reprehenderit. Laborum anim ad
-            laboris ipsum magna ullamco consequat ex consectetur. Duis sit
-            adipisicing ipsum occaecat commodo consequat officia ea. Cupidatat
-            fugiat reprehenderit aliqua eiusmod mollit Lorem consectetur. Minim
-            elit proident eu qui exercitation mollit id esse velit et dolore
-            velit laboris. Ipsum occaecat Lorem occaecat magna excepteur veniam
-            ullamco cupidatat irure incididunt velit nulla.
+      <br />
+      <br />
+      <div className="fr-grid-row">
+        <div className="fr-col">
+          <h2>Simulation d&apos;indemnité de rupture conventionnelle</h2>
+          <p>
+            Obtenez rapidement une première estimation de votre indemnité de
+            rupture conventionnelle.
+            <br />
+            <br />
+            <div className="fr-messages-group" aria-live="assertive">
+              <p className="fr-message">Conditions d&apos;éligibilité :</p>
+              <p className="fr-message fr-message--info">
+                Être agent public de FPE, FPT, FPH
+              </p>
+              <p className="fr-message fr-message--info">
+                Exercer dans les départements XXX
+              </p>
+              <p className="fr-message fr-message--info">
+                1 année minimum d&apos;ancienneté
+              </p>
+            </div>
           </p>
         </div>
-        <div className="fr-col-12 fr-col-offset-md-1 fr-col-md-4">
-          {/* eslint-disable-next-line jsx-a11y/img-redundant-alt*/}
-          {/* eslint-disable-next-line @next/next/no-img-element*/}
-          <img
-            className="fr-mt-2w"
-            src="https://dummyimage.com/300x300/188cf2/fff.png&amp;text=logo+1"
-            alt="My description"
+      </div>
+      <div className="fr-grid-row">
+        <div className="fr-col">
+          <Input
+            name="anciennete"
+            label="Ancienneté en années"
+            hint="Ancienneté totale de l’agent dans la Fonction Publique = durée cumulée des services accomplis dans la FPE, FPT, FPH exprimée en années complètes."
+            type="number"
+            onChange={setValue("anciennete")}
+          />
+          <Input
+            name="remuneration"
+            label="Rémunération brute annuelle totale"
+            hint="Rémunération brute annuelle totale de la dernière année civile (apparaissant sur le bulletin de salaire de décembre)."
+            onChange={setValue("remuneration")}
+            type="number"
           />
         </div>
       </div>
-      <Stack spacing={2} sx={{ mt: 5 }} direction="row">
-        <Button title="nbla" onClick={onClick1}>
-          Trigger sentry error
-        </Button>
-      </Stack>
+      {montant.nodeValue && (
+        <div className="fr-grid-row">
+          <div className="fr-col">
+            <div style={{ fontSize: "22px", marginTop: "1em" }}>
+              Votre indemnité de rupture conventionnelle pourrait aller
+              jusqu&apos;à&nbsp;
+              <b>{formattedMontant} </b>
+            </div>
+            <br />
+            <br />
+            <Button
+              title="Déposer ma demande via démarches-simplifiées.fr"
+              iconId="fr-icon-send-plane-fill"
+              linkProps={{
+                href: "https://www.demarches-simplifiees.fr/commencer/test/d2f7c653-9d17-495c-b11c-d00b736952fb",
+                target: "_blank",
+              }}
+              size="large"
+            >
+              Déposer ma demande via démarches-simplifiées.fr
+            </Button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

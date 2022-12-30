@@ -40,6 +40,7 @@
     "@sentry/nextjs": "^6.17.9",
     "@socialgouv/matomo-next": "^1.4.0",
     "next": "13.1.0",
+    "publicodes": "^1.0.0-beta.65",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tss-react": "^4.5.0"
@@ -69,6 +70,7 @@
     "is-ci": "^3.0.1",
     "jest": "^27.5.1",
     "lint-staged": "^12.3.7",
+    "next-plugin-yaml": "^1.0.1",
     "next-transpile-modules": "^10.0.0",
     "node-talisman": "^1.28.0",
     "start-server-and-test": "^1.14.0",

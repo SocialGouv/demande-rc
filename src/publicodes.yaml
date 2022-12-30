@@ -1,0 +1,18 @@
+anciennete:
+  unité: ans
+  valeur: 0
+  plafond: 24
+
+remuneration:
+  unité: €
+  valeur: 0
+
+montant:
+  applicable si:
+    toutes ces conditions:
+      - remuneration > 0
+      - anciennete > 0
+  valeur: remuneration / 12 * anciennete
+  unité: € bruts
+
+résultat: montant

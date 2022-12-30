@@ -5,6 +5,8 @@ fileignoreconfig:
   checksum: 6debf4f640d4ed9cb39bb19445214ab52dcb23fb7da12feeb85070816d7ee52a
 - filename: .github/workflows/kontinuous-webhook-deploy.yml
   checksum: 1fa040cef27d48607572966b9f06bf23656c95d03dd4cf5aba2508f0218f3a48
+- filename: pages/index.tsx
+  checksum: c9222c913a9f5d1f9c98d5de65e08b745f8a3e190dfcf8d42393b6fada10a6b2
 - filename: pages/mui.tsx
   checksum: 65dd6ab0469f43924ffc92d26055de14a77b1ef873e0efe69a014b582c38b694
 scopeconfig:

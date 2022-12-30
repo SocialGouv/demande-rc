@@ -2,7 +2,7 @@ const { withSentryConfig } = require("@sentry/nextjs");
 
 const { version } = require("./package.json");
 
-const ContentSecurityPolicy = require("./csp.config");
+const withYaml = require("next-plugin-yaml");
 
 const withTM = require("next-transpile-modules")(["@codegouvfr/react-dsfr"]);
 
@@ -15,7 +15,6 @@ const moduleExports = {
       test: /\.(woff2|webmanifest)$/,
       type: "asset/resource",
     });
-
     return config;
   },
   sentry: {
@@ -29,25 +28,6 @@ const moduleExports = {
   },
 };
 
-module.exports = {
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "Content-Security-Policy",
-            value: ContentSecurityPolicy.replace(/\n/g, " ").trim(),
-          },
-          {
-            key: "X-Robots-Tag",
-            value: process.env.NEXT_PUBLIC_IS_PRODUCTION_DEPLOYMENT
-              ? "all"
-              : "noindex, nofollow, nosnippet",
-          },
-        ],
-      },
-    ];
-  },
-  ...withTM(withSentryConfig(moduleExports, { silent: true })),
-};
+module.exports = withTM(
+  withYaml(withSentryConfig(moduleExports, { silent: true }))
+);

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useId } from "react";
 import { useRouter } from "next/router";
 import type { AppProps } from "next/app";
 import Link from "next/link";
@@ -67,12 +67,6 @@ const homeLinkPops = {
 
 const bottomLinks = [
   {
-    text: "Conditions d'utilisation",
-    linkProps: {
-      href: "/cgu",
-    },
-  },
-  {
     text: "Statistiques",
     linkProps: {
       href: "/stats",
@@ -96,17 +90,17 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <MuiDsfrThemeProvider>
         <Head>
-          <title>Template SocialGouv</title>
+          <title>demande-rc</title>
           <link rel="icon" href="/favicon.ico" />
           <meta
             name="description"
-            content="Template de la fabrique des ministères sociaux."
+            content="Informations sur la rupture conventionnelle"
           />
         </Head>
         <Header
           brandTop={brandTop}
-          serviceTitle="La fabrique numérique des ministères sociaux"
-          serviceTagline="L'incubateur des services numériques du pôle ministériel"
+          serviceTitle="Simulation d'indemnité de rupture conventionnelle"
+          serviceTagline=""
           homeLinkProps={homeLinkPops}
           navItems={[
             {
@@ -115,20 +109,6 @@ function App({ Component, pageProps }: AppProps) {
                 href: "/",
               },
               isActive: router.asPath === "/",
-            },
-            {
-              text: "DSFR playground",
-              linkProps: {
-                href: "/dsfr",
-              },
-              isActive: router.asPath === "/dsfr",
-            },
-            {
-              text: "Mui playground",
-              linkProps: {
-                href: "/mui",
-              },
-              isActive: router.asPath === "/mui",
             },
           ]}
           quickAccessItems={[headerFooterDisplayItem]}
@@ -154,9 +134,6 @@ function App({ Component, pageProps }: AppProps) {
     suivantes : Le site officiel d’information administrative pour les entreprises.
                 `}
           homeLinkProps={homeLinkPops}
-          accessibilityLinkProps={{ href: "/accessibilite" }}
-          termsLinkProps={{ href: "/mentions-legales" }}
-          personalDataLinkProps={{ href: "/politique-confidentialite" }}
           bottomItems={[...bottomLinks, headerFooterDisplayItem]}
         />
         <Display />
