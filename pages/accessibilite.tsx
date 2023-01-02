@@ -10,7 +10,7 @@ const Accessibilite: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Template | Déclaration d&apos;accessibilité</title>
+        <title>Déclaration d&apos;accessibilité</title>
       </Head>
 
       <div className="fr-container fr-my-6w">

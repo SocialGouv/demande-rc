@@ -1,11 +1,11 @@
-import { useEffect, useId } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 
 import { fr } from "@codegouvfr/react-dsfr";
-import { createNextDsfrIntegrationApi } from "@codegouvfr/react-dsfr/next";
-import { createMuiDsfrThemeProvider } from "@codegouvfr/react-dsfr/mui";
+import { createNextDsfrIntegrationApi } from "@codegouvfr/react-dsfr/next-pagesdir";
+import { MuiDsfrThemeProvider } from "@codegouvfr/react-dsfr/mui";
 import { createEmotionSsrAdvancedApproach } from "tss-react/next";
 import { useStyles } from "tss-react/dsfr";
 import {
@@ -24,12 +24,12 @@ declare module "@codegouvfr/react-dsfr" {
   }
 }
 
-const { MuiDsfrThemeProvider } = createMuiDsfrThemeProvider();
+//const { MuiDsfrThemeProvider } = createMuiDsfrThemeProvider();
 
 const { withDsfr, dsfrDocumentApi } = createNextDsfrIntegrationApi({
   defaultColorScheme: "system",
   doPersistDarkModePreferenceWithCookie: true,
-  Link,
+  //Link,
   preloadFonts: [
     //"Marianne-Light",
     //"Marianne-Light_Italic",
@@ -65,14 +65,7 @@ const homeLinkPops = {
     "Accueil - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)",
 };
 
-const bottomLinks = [
-  {
-    text: "Statistiques",
-    linkProps: {
-      href: "/stats",
-    },
-  },
-];
+//const bottomLinks = [];
 
 function App({ Component, pageProps }: AppProps) {
   const { css } = useStyles();
@@ -102,7 +95,7 @@ function App({ Component, pageProps }: AppProps) {
           serviceTitle="Simulation d'indemnité de rupture conventionnelle"
           serviceTagline=""
           homeLinkProps={homeLinkPops}
-          navItems={[
+          navigation={[
             {
               text: "Accueil",
               linkProps: {
@@ -134,7 +127,7 @@ function App({ Component, pageProps }: AppProps) {
     suivantes : Le site officiel d’information administrative pour les entreprises.
                 `}
           homeLinkProps={homeLinkPops}
-          bottomItems={[...bottomLinks, headerFooterDisplayItem]}
+          bottomItems={[/*...bottomLinks, */ headerFooterDisplayItem]}
         />
         <Display />
       </MuiDsfrThemeProvider>
