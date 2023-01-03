@@ -111,12 +111,27 @@ const Home: NextPage = () => {
       {montant.nodeValue && (
         <div className="fr-grid-row">
           <div className="fr-col">
-            <div style={{ fontSize: "22px", marginTop: "1em" }}>
-              Votre indemnité de rupture conventionnelle pourrait aller
+            <div style={{ fontSize: "22px", marginTop: "2em" }}>
+              <span className="fr-icon-info-line" aria-hidden="true"></span>
+              &nbsp;Votre indemnité de rupture conventionnelle pourrait aller
               jusqu&apos;à&nbsp;
               <b>{formattedMontant} </b>
             </div>
             <br />
+            <div className="">
+              Cette simulation est purement indicative et n’engage pas votre
+              employeur. Pour obtenir des informations précises sur vos droits
+              vous devez fournir les indications nécessaires à l’étude de votre
+              dossier, en cliquant sur{" "}
+              <a
+                href="https://www.demarches-simplifiees.fr/commencer/test/d2f7c653-9d17-495c-b11c-d00b736952fb"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                le lien suivant
+              </a>{" "}
+              ou en appelant le [xxx].
+            </div>
             <br />
             <Button
               title="Déposer ma demande via démarches-simplifiées.fr"
