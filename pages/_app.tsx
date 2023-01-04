@@ -120,12 +120,7 @@ function App({ Component, pageProps }: AppProps) {
         <Footer
           brandTop={brandTop}
           accessibility="non compliant"
-          contentDescription={`
-    Ce message est à remplacer par les informations de votre site.
-
-    Comme exemple de contenu, vous pouvez indiquer les informations 
-    suivantes : Le site officiel d’information administrative pour les entreprises.
-                `}
+          contentDescription={`Pour obtenir des informations complémentaires sur vos droits, vous pouvez appeler le [XXX] ou envoyer un courriel à l’adresse [XXX].`}
           homeLinkProps={homeLinkPops}
           bottomItems={[/*...bottomLinks, */ headerFooterDisplayItem]}
         />

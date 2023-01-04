@@ -7,8 +7,8 @@ import { Button } from "@codegouvfr/react-dsfr/Button";
 
 type InputProps = {
   name: string;
-  label: string;
-  hint?: string;
+  label: React.ReactNode;
+  hint?: React.ReactNode;
   messages?: React.ReactNode;
 } & Partial<React.InputHTMLAttributes<HTMLInputElement>>;
 
@@ -57,7 +57,9 @@ const Home: NextPage = () => {
         setSituation({ ...situation, [key]: 0 });
       }
     };
+
   const formattedMontant = formatValue(montant);
+
   return (
     <>
       <Alert
@@ -78,13 +80,13 @@ const Home: NextPage = () => {
             <div className="fr-messages-group" aria-live="assertive">
               <p className="fr-message">Conditions d&apos;éligibilité :</p>
               <p className="fr-message fr-message--info">
-                Être agent public de FPE, FPT, FPH
+                Être titulaire ou en CDI dans la Fonction Publique Hospitalière
               </p>
               <p className="fr-message fr-message--info">
                 Exercer dans les départements XXX
               </p>
               <p className="fr-message fr-message--info">
-                1 année minimum d&apos;ancienneté
+                Avoir moins de 62 ans
               </p>
             </div>
           </p>
@@ -102,7 +104,35 @@ const Home: NextPage = () => {
           <Input
             name="remuneration"
             label="Rémunération brute annuelle totale"
-            hint="Rémunération brute annuelle totale de la dernière année civile (apparaissant sur le bulletin de salaire de décembre)."
+            hint={
+              <>
+                Rémunération brute annuelle totale de la dernière année civile
+                (apparaissant sur le bulletin de salaire de décembre).
+                <br />
+                <div className="fr-messages-group" aria-live="assertive">
+                  <p className="fr-message">
+                    Éléments à retirer de la rémunération brute annuelle totale
+                    de la dernière année civile :
+                  </p>
+                  <p className="fr-message fr-message--error">
+                    Remboursements de frais
+                  </p>
+                  <p className="fr-message fr-message--error">
+                    Primes et indemnités de changement de résidence, de
+                    primo-affectation, liées à la mobilité géographique et aux
+                    restructurations
+                  </p>
+                  <p className="fr-message fr-message--error">
+                    Indemnités d&apos;enseignement ou de jury et autres
+                    indemnités non directement liées à l&apos;emploi.
+                  </p>
+                  <p className="fr-message fr-message--error">
+                    Majorations et indexations relatives à une affectation
+                    outre-mer
+                  </p>
+                </div>
+              </>
+            }
             onChange={setValue("remuneration")}
             type="number"
           />
