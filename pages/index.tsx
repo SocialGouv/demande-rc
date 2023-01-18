@@ -83,7 +83,7 @@ const Home: NextPage = () => {
                 Être titulaire ou en CDI dans la Fonction Publique Hospitalière
               </p>
               <p className="fr-message fr-message--info">
-                Exercer dans les départements XXX
+                Exercer dans les départements Guadeloupe ou Martinique
               </p>
               <p className="fr-message fr-message--info">
                 Avoir moins de 62 ans
@@ -125,10 +125,6 @@ const Home: NextPage = () => {
                   <p className="fr-message fr-message--error">
                     Indemnités d&apos;enseignement ou de jury et autres
                     indemnités non directement liées à l&apos;emploi.
-                  </p>
-                  <p className="fr-message fr-message--error">
-                    Majorations et indexations relatives à une affectation
-                    outre-mer
                   </p>
                 </div>
               </>
