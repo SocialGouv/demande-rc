@@ -156,7 +156,7 @@ const Home: NextPage = () => {
               >
                 le lien suivant
               </a>{" "}
-              ou en appelant le [xxx].
+              ou en appelant le 0 800 730 958.
             </div>
             <br />
             <Button
