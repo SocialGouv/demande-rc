@@ -120,7 +120,7 @@ function App({ Component, pageProps }: AppProps) {
         <Footer
           brandTop={brandTop}
           accessibility="non compliant"
-          contentDescription={`Pour obtenir des informations complémentaires sur vos droits, vous pouvez appeler le 0 800 730 958 ou envoyer un courriel à l’adresse [XXX].`}
+          contentDescription={`Pour obtenir des informations complémentaires sur vos droits, vous pouvez appeler le 0&nbsp;800&nbsp;730&nbsp;958 ou envoyer un courriel à l’adresse [XXX].`}
           homeLinkProps={homeLinkPops}
           bottomItems={[/*...bottomLinks, */ headerFooterDisplayItem]}
         />
