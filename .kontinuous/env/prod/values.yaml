@@ -1,3 +1,6 @@
+app:
+  host: "rc.outre-mer.social.gouv.fr"
+
 jobs:
   runs:
     build-app:
