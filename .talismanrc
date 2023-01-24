@@ -1,6 +1,10 @@
 fileignoreconfig:
 - filename: .env.development
   checksum: 44d017f8bd7ac1f3f4fb8b8175b3dddb6f160cf05b2738ec16b5b848aeb62d3f
+- filename: .github/workflows/kontinuous-deactivate.yml
+  checksum: 0eb6d7c05fe1dbffb1913a7877d54b29bcea287d18f3e1ba225de340a3ff73c2
+- filename: .github/workflows/kontinuous-production.yaml
+  checksum: ca19510d3cb706d5bc614f48c6531c441f8b128d63093872a9de1172cfc54947
 - filename: .github/workflows/kontinuous-webhook-delete.yml
   checksum: 6debf4f640d4ed9cb39bb19445214ab52dcb23fb7da12feeb85070816d7ee52a
 - filename: .github/workflows/kontinuous-webhook-deploy.yml
