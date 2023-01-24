@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/SocialGouv/demande-rc/compare/v1.0.0...v1.0.1) (2023-01-24)
+
+
+### Bug Fixes
+
+* workflows ([6feaf30](https://github.com/SocialGouv/demande-rc/commit/6feaf30e87a88af432004ad7e3d5fc42242445d8))
+
 # 1.0.0 (2023-01-24)
 
 
