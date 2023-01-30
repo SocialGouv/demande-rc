@@ -86,7 +86,8 @@ const Home: NextPage = () => {
                 Exercer dans les départements Guadeloupe ou Martinique
               </p>
               <p className="fr-message fr-message--info">
-                Avoir moins de 62 ans
+                Avoir moins de 62 ans ou ne pas justifier de droit à la retraite
+                à taux plein
               </p>
             </div>
           </p>
@@ -97,7 +98,7 @@ const Home: NextPage = () => {
           <Input
             name="anciennete"
             label="Ancienneté en années"
-            hint="Ancienneté totale de l’agent dans la Fonction Publique = durée cumulée des services accomplis dans la FPE, FPT, FPH exprimée en années complètes."
+            hint="Ancienneté totale de l’agent dans la Fonction Publique = durée cumulée des services effectifs accomplis dans la FPE, FPT, FPH exprimée en années complètes."
             type="number"
             onChange={setValue("anciennete")}
           />
