@@ -151,7 +151,7 @@ const Home: NextPage = () => {
               vous devez fournir les indications nécessaires à l’étude de votre
               dossier, en cliquant sur{" "}
               <a
-                href="https://www.demarches-simplifiees.fr/commencer/test/d2f7c653-9d17-495c-b11c-d00b736952fb"
+                href="https://www.demarches-simplifiees.fr/commencer/demande-de-rc"
                 target="_blank"
                 rel="noreferrer noopener"
               >
@@ -164,7 +164,7 @@ const Home: NextPage = () => {
               title="Déposer ma demande via démarches-simplifiées.fr"
               iconId="fr-icon-send-plane-fill"
               linkProps={{
-                href: "https://www.demarches-simplifiees.fr/commencer/test/d2f7c653-9d17-495c-b11c-d00b736952fb",
+                href: "https://www.demarches-simplifiees.fr/commencer/demande-de-rc",
                 target: "_blank",
               }}
               size="large"

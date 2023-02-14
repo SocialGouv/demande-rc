@@ -83,7 +83,7 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <MuiDsfrThemeProvider>
         <Head>
-          <title>demande-rc</title>
+          <title>Simulation d&apos;indemnité de rupture conventionnelle</title>
           <link rel="icon" href="/favicon.ico" />
           <meta
             name="description"
@@ -120,7 +120,7 @@ function App({ Component, pageProps }: AppProps) {
         <Footer
           brandTop={brandTop}
           accessibility="non compliant"
-          contentDescription={`Pour obtenir des informations complémentaires sur vos droits, vous pouvez appeler le 0\u00A0800\u00A0730\u00A0958 ou envoyer un courriel à l’adresse [XXX].`}
+          contentDescription={`Pour obtenir des informations complémentaires sur vos droits, vous pouvez appeler le 0\u00A0800\u00A0730\u00A0958.`}
           homeLinkProps={homeLinkPops}
           bottomItems={[/*...bottomLinks, */ headerFooterDisplayItem]}
         />
