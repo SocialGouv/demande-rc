@@ -86,7 +86,8 @@ const Home: NextPage = () => {
                 Exercer dans les départements Guadeloupe ou Martinique
               </p>
               <p className="fr-message fr-message--info">
-                Avoir moins de 62 ans
+                Avoir moins de 62 ans ou ne pas justifier de droit à la retraite
+                à taux plein
               </p>
             </div>
           </p>
@@ -97,7 +98,7 @@ const Home: NextPage = () => {
           <Input
             name="anciennete"
             label="Ancienneté en années"
-            hint="Ancienneté totale de l’agent dans la Fonction Publique = durée cumulée des services accomplis dans la FPE, FPT, FPH exprimée en années complètes."
+            hint="Ancienneté totale de l’agent dans la Fonction Publique = durée cumulée des services effectifs accomplis dans la FPE, FPT, FPH exprimée en années complètes."
             type="number"
             onChange={setValue("anciennete")}
           />
@@ -150,7 +151,7 @@ const Home: NextPage = () => {
               vous devez fournir les indications nécessaires à l’étude de votre
               dossier, en cliquant sur{" "}
               <a
-                href="https://www.demarches-simplifiees.fr/commencer/test/d2f7c653-9d17-495c-b11c-d00b736952fb"
+                href="https://www.demarches-simplifiees.fr/commencer/demande-de-rc"
                 target="_blank"
                 rel="noreferrer noopener"
               >
@@ -163,7 +164,7 @@ const Home: NextPage = () => {
               title="Déposer ma demande via démarches-simplifiées.fr"
               iconId="fr-icon-send-plane-fill"
               linkProps={{
-                href: "https://www.demarches-simplifiees.fr/commencer/test/d2f7c653-9d17-495c-b11c-d00b736952fb",
+                href: "https://www.demarches-simplifiees.fr/commencer/demande-de-rc",
                 target: "_blank",
               }}
               size="large"
