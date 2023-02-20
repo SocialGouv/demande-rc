@@ -159,21 +159,21 @@ const Home: NextPage = () => {
               </a>{" "}
               ou en appelant le 0&nbsp;800&nbsp;730&nbsp;958.
             </div>
-            <br />
-            <Button
-              title="Déposer ma demande via démarches-simplifiées.fr"
-              iconId="fr-icon-send-plane-fill"
-              linkProps={{
-                href: "https://www.demarches-simplifiees.fr/commencer/demande-de-rc",
-                target: "_blank",
-              }}
-              size="large"
-            >
-              Déposer ma demande via démarches-simplifiées.fr
-            </Button>
           </div>
         </div>
       )}
+      <br />
+      <Button
+        title="Déposer ma demande via démarches-simplifiées.fr"
+        iconId="fr-icon-send-plane-fill"
+        linkProps={{
+          href: "https://www.demarches-simplifiees.fr/commencer/demande-de-rc",
+          target: "_blank",
+        }}
+        size="large"
+      >
+        Déposer ma demande via démarches-simplifiées.fr
+      </Button>
     </>
   );
 };
