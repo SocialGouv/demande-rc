@@ -1164,12 +1164,12 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@codegouvfr/react-dsfr@^0.20.0":
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/@codegouvfr/react-dsfr/-/react-dsfr-0.20.0.tgz#7336825ba9a3b3418bfdf4c0e66dcb0e3e495fd8"
-  integrity sha512-hwC2AqJDgDOspOh9UTyIzxMc7q4OIX2tudvhWRbhc0x592YlJlcWGMdgDSUNlbl56yvPXu0Ruqc30JpXyoDklw==
+"@codegouvfr/react-dsfr@^0.78.0":
+  version "0.78.7"
+  resolved "https://registry.yarnpkg.com/@codegouvfr/react-dsfr/-/react-dsfr-0.78.7.tgz#da8774476db0134615c9f0d96bf501c2b3987f6f"
+  integrity sha512-Gj+Y1xadzPYPpGNk9AA4A8TNrVSSdLz1d3oCMRFKxXYbmyIobX7yOvae0Y64AN+yDb4CHmFjaYhf/907tVPOkA==
   dependencies:
-    tsafe "^1.4.0"
+    tsafe "^1.6.3"
 
 "@colors/colors@1.5.0":
   version "1.5.0"
@@ -11252,13 +11252,13 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
-react-dom@18.2.0:
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
-  integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
+react-dom@18.3.1:
+  version "18.3.1"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.3.1.tgz#c2265d79511b57d479b3dd3fdfa51536494c5cb4"
+  integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
   dependencies:
     loose-envify "^1.1.0"
-    scheduler "^0.23.0"
+    scheduler "^0.23.2"
 
 react-element-to-jsx-string@^14.3.4:
   version "14.3.4"
@@ -11313,10 +11313,10 @@ react-transition-group@^4.4.5:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@18.2.0:
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
-  integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
+react@18.3.1:
+  version "18.3.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-18.3.1.tgz#49ab892009c53933625bd16b2533fc754cab2891"
+  integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
   dependencies:
     loose-envify "^1.1.0"
 
@@ -11828,10 +11828,10 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-scheduler@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.23.0.tgz#ba8041afc3d30eb206a487b6b384002e4e61fdfe"
-  integrity sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==
+scheduler@^0.23.2:
+  version "0.23.2"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.23.2.tgz#414ba64a3b282892e944cf2108ecc078d115cdc3"
+  integrity sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==
   dependencies:
     loose-envify "^1.1.0"
 
@@ -12891,10 +12891,10 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-tsafe@^1.4.0:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-1.4.1.tgz#59cdad8ac41babf88e56dcd1a683ae2fb145d059"
-  integrity sha512-3IDBalvf6SyvHFS14UiwCWzqdSdo+Q0k2J7DZyJYaHW/iraW9DJpaBKDJpry3yQs3o/t/A+oGaRW3iVt2lKxzA==
+tsafe@^1.6.3:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-1.6.6.tgz#fd93e64d6eb13ef83ed1650669cc24bad4f5df9f"
+  integrity sha512-gzkapsdbMNwBnTIjgO758GujLCj031IgHK/PKr2mrmkCSJMhSOR5FeOuSxKLMUoYc0vAA4RGEYYbjt/v6afD3g==
 
 tsconfig-paths@^3.14.1:
   version "3.14.1"

@@ -29,7 +29,7 @@
     "postinstall": "is-ci || husky install"
   },
   "dependencies": {
-    "@codegouvfr/react-dsfr": "^0.20.0",
+    "@codegouvfr/react-dsfr": "^0.78.0",
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.5",
@@ -41,8 +41,8 @@
     "@socialgouv/matomo-next": "^1.4.0",
     "next": "^13.1.1",
     "publicodes": "^1.0.0-beta.65",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "tss-react": "^4.5.2"
   },
   "devDependencies": {
